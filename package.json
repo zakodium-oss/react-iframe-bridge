@@ -13,6 +13,7 @@
     "compile": "tsc && tsc -p tsconfig.cjs.json",
     "eslint": "eslint .",
     "eslint-fix": "npm run eslint -- --fix",
+    "prepack": "npm run compile",
     "prettier": "prettier --check .",
     "prettier-write": "prettier --write .",
     "test": "npm run eslint && npm run prettier && npm run check-types"
