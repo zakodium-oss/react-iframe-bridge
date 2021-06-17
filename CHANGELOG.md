@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.3](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.1.2...v0.1.3) (2021-06-17)
+
+
+### Bug Fixes
+
+* build project before publishing ([6be2490](https://www.github.com/zakodium/react-iframe-bridge/commit/6be2490aa392edcd82e86a6a94d8e629d7767b3c))
+
 ### [0.1.2](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.1.1...v0.1.2) (2021-06-17)
 
 
