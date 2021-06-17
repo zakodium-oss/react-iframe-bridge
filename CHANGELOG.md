@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.1.1...v0.1.2) (2021-06-17)
+
+
+### Bug Fixes
+
+* include TypeScript declarations ([6d568d9](https://www.github.com/zakodium/react-iframe-bridge/commit/6d568d968fe5a2aed7c26f6b44b896413ecd8aee))
+
 ### [0.1.1](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.1.0...v0.1.1) (2021-06-17)
 
 
