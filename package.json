@@ -4,6 +4,10 @@
   "description": "React hooks and components to work with iframe-bridge.",
   "main": "lib-cjs/index.js",
   "module": "lib/index.js",
+  "files": [
+    "lib",
+    "lib-cjs"
+  ],
   "scripts": {
     "check-types": "tsc --noEmit",
     "compile": "tsc && tsc -p tsconfig.cjs.json",
