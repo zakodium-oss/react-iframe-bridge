@@ -25,7 +25,7 @@
   "dependencies": {
     "clsx": "^1.1.1",
     "iframe-bridge": "^1.2.1",
-    "immer": "^8.0.4",
+    "immer": "^9.0.3",
     "rest-on-couch-client": "^2.3.0"
   },
   "devDependencies": {
