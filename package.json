@@ -1,0 +1,40 @@
+{
+  "name": "react-iframe-bridge",
+  "version": "0.0.0",
+  "description": "React hooks and components to work with iframe-bridge.",
+  "main": "lib-cjs/index.js",
+  "module": "lib/index.js",
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "compile": "tsc && tsc -p tsconfig.cjs.json",
+    "eslint": "eslint .",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prettier": "prettier --check .",
+    "prettier-write": "prettier --write .",
+    "test": "npm run eslint && npm run prettier && npm run check-types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakodium/react-iframe-bridge.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zakodium/react-iframe-bridge/issues"
+  },
+  "homepage": "https://github.com/zakodium/react-iframe-bridge#readme",
+  "dependencies": {
+    "clsx": "^1.1.1",
+    "iframe-bridge": "^1.2.1",
+    "immer": "^8.0.4",
+    "rest-on-couch-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.7",
+    "@zakodium/eslint-config": "^3.0.2",
+    "eslint": "^7.28.0",
+    "prettier": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
