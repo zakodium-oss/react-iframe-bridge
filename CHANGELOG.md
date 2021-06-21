@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.4](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.1.3...v0.1.4) (2021-06-21)
+
+
+### Bug Fixes
+
+* add form-input class to home inputs ([a88dbf6](https://www.github.com/zakodium/react-iframe-bridge/commit/a88dbf641d7946a7e39e4a7b961f2ccb1762ebde))
+
 ### [0.1.3](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.1.2...v0.1.3) (2021-06-17)
 
 
