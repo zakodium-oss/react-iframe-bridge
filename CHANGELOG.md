@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.1.4...v0.2.0) (2021-06-21)
+
+
+### Features
+
+* **Home:** add optional rocUrl and database props ([9c30eed](https://www.github.com/zakodium/react-iframe-bridge/commit/9c30eed3cf3cf997107a82801d4a4a944d7e7944))
+
 ### [0.1.4](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.1.3...v0.1.4) (2021-06-21)
 
 
