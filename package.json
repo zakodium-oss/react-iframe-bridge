@@ -29,7 +29,7 @@
   "homepage": "https://github.com/zakodium/react-iframe-bridge#readme",
   "dependencies": {
     "clsx": "^1.1.1",
-    "iframe-bridge": "^1.2.1",
+    "iframe-bridge": "^2.0.0",
     "immer": "^9.0.3",
     "rest-on-couch-client": "^2.3.0"
   },
