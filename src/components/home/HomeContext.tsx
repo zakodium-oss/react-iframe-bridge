@@ -21,13 +21,19 @@ interface HomeContextType {
   selectedSample: string | null;
 }
 
-const initialHomeContext: HomeContextType = {
-  rocUrl: 'http://localhost:3000/api/fake-roc',
-  database: 'eln',
-  iframePage: (getItem('dev-home-iframePage') as string) || '/dev/base-page',
-  iframeMode: 'closed',
-  selectedSample: null,
-};
+function getInitialHomeContext(
+  config: { rocUrl?: string; database?: string } = {},
+): HomeContextType {
+  const { rocUrl = 'http://localhost:3000/api/fake-roc', database = 'eln' } =
+    config;
+  return {
+    rocUrl,
+    database,
+    iframePage: (getItem('dev-home-iframePage') as string) || '/dev/base-page',
+    iframeMode: 'closed',
+    selectedSample: null,
+  };
+}
 
 type HomeContextAction =
   | ActionType<'SELECT_SAMPLE', string>
@@ -54,22 +60,31 @@ const homeReducer: Reducer<HomeContextType, HomeContextAction> = produce(
   },
 );
 
-const homeContext = createContext(initialHomeContext);
+const homeContext = createContext(getInitialHomeContext());
 const homeDispatchContext = createContext<Dispatch<HomeContextAction>>(() => {
   // noop
 });
 
-export function HomeContextProvider(props: { children: ReactNode }) {
-  const [homeState, dispatch] = useReducer(homeReducer, initialHomeContext);
+interface HomeContextProviderProps {
+  children: ReactNode;
+  // eslint-disable-next-line react/no-unused-prop-types
+  rocUrl?: string;
+  // eslint-disable-next-line react/no-unused-prop-types
+  database?: string;
+}
+
+export function HomeContextProvider(props: HomeContextProviderProps) {
+  const [homeState, dispatch] = useReducer(
+    homeReducer,
+    props,
+    getInitialHomeContext,
+  );
   useSaveToLocalStorage('dev-home-iframePage', homeState.iframePage);
 
   return (
     <homeContext.Provider value={homeState}>
       <homeDispatchContext.Provider value={dispatch}>
-        <RocProvider
-          database={initialHomeContext.database}
-          url={initialHomeContext.rocUrl}
-        >
+        <RocProvider url={homeState.rocUrl} database={homeState.database}>
           {props.children}
         </RocProvider>
       </homeDispatchContext.Provider>
