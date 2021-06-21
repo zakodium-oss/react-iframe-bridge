@@ -8,20 +8,22 @@ export default function HomeHeader() {
       <input
         name="rocUrl"
         type="text"
-        className="flex-1"
+        className="flex-1 form-input"
         value={rocUrl}
         readOnly
       />
       <input
         name="database"
         type="text"
-        className="flex-1"
+        className="flex-1 form-input"
         value={database}
         readOnly
       />
       <input
         name="iframe-page"
         value={iframePage}
+        type="text"
+        className="form-input"
         onChange={(event) => {
           dispatch({ type: 'SET_IFRAME_PAGE', payload: event.target.value });
         }}
