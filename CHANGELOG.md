@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.2.0...v0.2.1) (2021-07-28)
+
+
+### Bug Fixes
+
+* upgrade deps to fix issue when building with vite from depender ([476e8ff](https://www.github.com/zakodium/react-iframe-bridge/commit/476e8ff646296b9ecbc70a92c49f08753656a17d))
+
 ## [0.2.0](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.1.4...v0.2.0) (2021-06-21)
 
 
