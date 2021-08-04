@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.2](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.2.1...v0.2.2) (2021-08-04)
+
+
+### Bug Fixes
+
+* **home:** increase size of page field ([ed69446](https://www.github.com/zakodium/react-iframe-bridge/commit/ed6944698eb07690cc21f4d274458b94cbf3a692))
+
 ### [0.2.1](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.2.0...v0.2.1) (2021-07-28)
 
 
