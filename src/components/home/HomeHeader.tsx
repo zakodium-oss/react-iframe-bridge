@@ -15,7 +15,7 @@ export default function HomeHeader() {
       <input
         name="database"
         type="text"
-        className="flex-1 form-input"
+        className="form-input"
         value={database}
         readOnly
       />
@@ -23,7 +23,7 @@ export default function HomeHeader() {
         name="iframe-page"
         value={iframePage}
         type="text"
-        className="form-input"
+        className="flex-1 form-input"
         onChange={(event) => {
           dispatch({ type: 'SET_IFRAME_PAGE', payload: event.target.value });
         }}
