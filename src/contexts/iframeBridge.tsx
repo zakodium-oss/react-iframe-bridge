@@ -15,9 +15,11 @@ import LoadingFull from '../components/LoadingFull';
 import { SampleEntryContent } from '../types/db';
 import { ActionType } from '../types/util';
 
-const iframeBridgeContext = createContext<IframeBridgeContextType | null>(null);
+const iframeBridgeContext = createContext<IframeBridgeReadyContextType | null>(
+  null,
+);
 
-export function useIframeBridgeContext(): IframeBridgeContextType {
+export function useIframeBridgeContext(): IframeBridgeReadyContextType {
   const context = useContext(iframeBridgeContext);
   if (!context) {
     throw new Error('Iframe bridge context is not ready');
@@ -40,6 +42,28 @@ interface IframeBridgeContextType {
   hasSample: boolean;
   sample: RocDocument<SampleEntryContent> | null;
 }
+
+interface IframeBridgeReadyContextTypeBase {
+  state: 'ready';
+  data: IframeDataMessage;
+  roc: Roc;
+}
+
+interface IframeBridgeReadyContextTypeWithSample
+  extends IframeBridgeReadyContextTypeBase {
+  hasSample: true;
+  sample: RocDocument<SampleEntryContent>;
+}
+
+interface IframeBridgeReadyContextTypeWithoutSample
+  extends IframeBridgeReadyContextTypeBase {
+  hasSample: false;
+  sample: null;
+}
+
+type IframeBridgeReadyContextType =
+  | IframeBridgeReadyContextTypeWithSample
+  | IframeBridgeReadyContextTypeWithoutSample;
 
 interface IframeDataMessage {
   couchDB: {
@@ -188,7 +212,9 @@ export function IframeBridgeProvider(props: {
 
   return (
     <div className="w-screen h-screen">
-      <iframeBridgeContext.Provider value={state}>
+      <iframeBridgeContext.Provider
+        value={state as IframeBridgeReadyContextType}
+      >
         {props.children}
       </iframeBridgeContext.Provider>
     </div>
