@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.2.3...v0.3.0) (2021-08-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* do not always render page contents in w-screen h-screen
+
+### Bug Fixes
+
+* do not always render page contents in w-screen h-screen ([760d713](https://www.github.com/zakodium/react-iframe-bridge/commit/760d713ade8d1182615f62d7a15542dbb9d337db))
+
 ### [0.2.3](https://www.github.com/zakodium/react-iframe-bridge/compare/v0.2.2...v0.2.3) (2021-08-10)
 
 
