@@ -211,12 +211,8 @@ export function IframeBridgeProvider(props: {
   }
 
   return (
-    <div className="w-screen h-screen">
-      <iframeBridgeContext.Provider
-        value={state as IframeBridgeReadyContextType}
-      >
-        {props.children}
-      </iframeBridgeContext.Provider>
-    </div>
+    <iframeBridgeContext.Provider value={state as IframeBridgeReadyContextType}>
+      {props.children}
+    </iframeBridgeContext.Provider>
   );
 }
