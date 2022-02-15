@@ -28,11 +28,12 @@ export interface TocEntry {
   reference: string;
 }
 
+export type SampleEntryId = [string, string];
 export interface SampleEntry {
   _id: string;
   _rev: string;
   $type: 'entry';
-  $id: [string, string];
+  $id: SampleEntryId;
   $kind: 'sample';
   $owners: string[];
   $content: SampleEntryContent;

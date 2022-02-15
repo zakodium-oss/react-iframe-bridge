@@ -1,3 +1,5 @@
+// https://github.com/import-js/eslint-plugin-import/issues/1810
+/* eslint-disable import/no-unresolved */
 import { ready, onMessage } from 'iframe-bridge/iframe';
 import { produce } from 'immer';
 import {
@@ -12,7 +14,7 @@ import { Roc, RocDocument } from 'rest-on-couch-client';
 
 import ErrorPage from '../components/ErrorPage';
 import LoadingFull from '../components/LoadingFull';
-import { SampleEntryContent } from '../types/db';
+import { SampleEntryContent, SampleEntryId } from '../types/db';
 import { ActionType } from '../types/util';
 
 const iframeBridgeContext = createContext<IframeBridgeReadyContextType | null>(
@@ -27,7 +29,10 @@ export function useIframeBridgeContext(): IframeBridgeReadyContextType {
   return context;
 }
 
-export function useIframeBridgeSample(): RocDocument<SampleEntryContent> {
+export function useIframeBridgeSample(): RocDocument<
+  SampleEntryContent,
+  SampleEntryId
+> {
   const context = useIframeBridgeContext();
   if (!context.sample) {
     throw new Error('No sample in context');
@@ -40,7 +45,7 @@ interface IframeBridgeContextType {
   data: IframeDataMessage | null;
   roc: Roc | null;
   hasSample: boolean;
-  sample: RocDocument<SampleEntryContent> | null;
+  sample: RocDocument<SampleEntryContent, SampleEntryId> | null;
 }
 
 interface IframeBridgeReadyContextTypeBase {
@@ -52,7 +57,7 @@ interface IframeBridgeReadyContextTypeBase {
 interface IframeBridgeReadyContextTypeWithSample
   extends IframeBridgeReadyContextTypeBase {
   hasSample: true;
-  sample: RocDocument<SampleEntryContent>;
+  sample: RocDocument<SampleEntryContent, SampleEntryId>;
 }
 
 interface IframeBridgeReadyContextTypeWithoutSample
@@ -82,7 +87,7 @@ type IframeMessage =
 
 type IframeBridgeContextAction =
   | ActionType<'RECEIVE_DATA', IframeDataMessage>
-  | ActionType<'SET_SAMPLE', RocDocument<SampleEntryContent>>
+  | ActionType<'SET_SAMPLE', RocDocument<SampleEntryContent, SampleEntryId>>
   | ActionType<'STANDALONE_TIMEOUT'>;
 
 const iframeBridgeReducer: Reducer<
@@ -166,7 +171,9 @@ export function IframeBridgeProvider(props: {
   useEffect(() => {
     if (!state.roc || !state.data || !state.data.uuid) return;
     let cancelled = false;
-    const document = state.roc.getDocument<SampleEntryContent>(state.data.uuid);
+    const document = state.roc.getDocument<SampleEntryContent, SampleEntryId>(
+      state.data.uuid,
+    );
     document
       .fetch()
       .then(() => {

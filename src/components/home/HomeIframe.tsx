@@ -1,3 +1,5 @@
+// https://github.com/import-js/eslint-plugin-import/issues/1810
+/* eslint-disable import/no-unresolved  */
 import { registerHandler, postMessage } from 'iframe-bridge/main';
 import { useEffect, useState } from 'react';
 
