@@ -20,13 +20,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zakodium/react-iframe-bridge.git"
+    "url": "git+https://github.com/zakodium-oss/react-iframe-bridge.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zakodium/react-iframe-bridge/issues"
+    "url": "https://github.com/zakodium-oss/react-iframe-bridge/issues"
   },
-  "homepage": "https://github.com/zakodium/react-iframe-bridge#readme",
+  "homepage": "https://github.com/zakodium-oss/react-iframe-bridge#readme",
   "dependencies": {
     "clsx": "^1.1.1",
     "iframe-bridge": "^2.0.0",
