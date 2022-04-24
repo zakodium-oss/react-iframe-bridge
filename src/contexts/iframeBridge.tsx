@@ -17,11 +17,13 @@ import LoadingFull from '../components/LoadingFull';
 import { SampleEntryContent, SampleEntryId } from '../types/db';
 import { ActionType } from '../types/util';
 
-const iframeBridgeContext = createContext<IframeBridgeReadyContextType | null>(
-  null,
-);
+const iframeBridgeContext =
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  createContext<IframeBridgeReadyContextType<any> | null>(null);
 
-export function useIframeBridgeContext(): IframeBridgeReadyContextType {
+export function useIframeBridgeContext<
+  PublicUserInfo = unknown,
+>(): IframeBridgeReadyContextType<PublicUserInfo> {
   const context = useContext(iframeBridgeContext);
   if (!context) {
     throw new Error('Iframe bridge context is not ready');
@@ -40,10 +42,10 @@ export function useIframeBridgeSample(): RocDocument<
   return context.sample;
 }
 
-interface IframeBridgeContextType {
+interface IframeBridgeContextType<PublicUserInfo = unknown> {
   state: 'initial' | 'loading' | 'ready' | 'standalone-error';
   data: IframeDataMessage | null;
-  roc: Roc | null;
+  roc: Roc<PublicUserInfo> | null;
   hasSample: boolean;
   sample: RocDocument<SampleEntryContent, SampleEntryId> | null;
 }
