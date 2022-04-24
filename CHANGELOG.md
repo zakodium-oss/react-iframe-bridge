@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.5.1](https://www.github.com/zakodium-oss/react-iframe-bridge/compare/v0.5.0...v0.5.1) (2022-04-24)
+
+
+### Bug Fixes
+
+* expose new roc type in api ([86609ea](https://www.github.com/zakodium-oss/react-iframe-bridge/commit/86609ea68f0902d77e1689e711b1e19f33524d4f))
+
 ## [0.5.0](https://www.github.com/zakodium-oss/react-iframe-bridge/compare/v0.4.0...v0.5.0) (2022-04-24)
 
 
