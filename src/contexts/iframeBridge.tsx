@@ -48,27 +48,27 @@ interface IframeBridgeContextType {
   sample: RocDocument<SampleEntryContent, SampleEntryId> | null;
 }
 
-interface IframeBridgeReadyContextTypeBase {
+interface IframeBridgeReadyContextTypeBase<PublicUserInfo> {
   state: 'ready';
   data: IframeDataMessage;
-  roc: Roc;
+  roc: Roc<PublicUserInfo>;
 }
 
-interface IframeBridgeReadyContextTypeWithSample
-  extends IframeBridgeReadyContextTypeBase {
+interface IframeBridgeReadyContextTypeWithSample<PublicUserInfo>
+  extends IframeBridgeReadyContextTypeBase<PublicUserInfo> {
   hasSample: true;
   sample: RocDocument<SampleEntryContent, SampleEntryId>;
 }
 
-interface IframeBridgeReadyContextTypeWithoutSample
-  extends IframeBridgeReadyContextTypeBase {
+interface IframeBridgeReadyContextTypeWithoutSample<PublicUserInfo>
+  extends IframeBridgeReadyContextTypeBase<PublicUserInfo> {
   hasSample: false;
   sample: null;
 }
 
-type IframeBridgeReadyContextType =
-  | IframeBridgeReadyContextTypeWithSample
-  | IframeBridgeReadyContextTypeWithoutSample;
+type IframeBridgeReadyContextType<PublicUserInfo = unknown> =
+  | IframeBridgeReadyContextTypeWithSample<PublicUserInfo>
+  | IframeBridgeReadyContextTypeWithoutSample<PublicUserInfo>;
 
 interface IframeDataMessage {
   couchDB: {

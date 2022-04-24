@@ -3,8 +3,8 @@ import { Roc } from 'rest-on-couch-client';
 
 const rocContext = createContext<Roc | null>(null);
 
-export function useRoc() {
-  const roc = useContext(rocContext);
+export function useRoc<PublicUserInfo = unknown>() {
+  const roc = useContext(rocContext) as Roc<PublicUserInfo>;
   if (!roc) {
     throw new Error('missing roc');
   }
