@@ -22,8 +22,8 @@ export function Home(props: HomeProps) {
     <HomeContextProvider rocUrl={props.rocUrl} database={props.database}>
       <div className="flex flex-col w-screen h-screen">
         <HomeHeader />
-        <div className="flex flex-row flex-1 mt-2 border-t border-neutral-300 ">
-          <div className="flex flex-col w-48 px-2 pt-4 space-y-3 border-r h-100 border-neutral-300">
+        <div className="flex flex-row flex-1 mt-2 border-t border-neutral-300 min-h-0">
+          <div className="flex flex-col w-48 px-2 pt-4 space-y-3 border-r border-neutral-300 overflow-auto">
             <HomeNoSample />
             <HomeSamples />
           </div>
