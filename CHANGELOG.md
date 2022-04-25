@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/zakodium-oss/react-iframe-bridge/compare/v0.5.1...v0.6.0) (2022-04-25)
+
+
+### Features
+
+* add scrollbar in Home page for samples ([33503f7](https://www.github.com/zakodium-oss/react-iframe-bridge/commit/33503f75a6755ddd5d2cb8e5e6d7557955d661ab))
+
 ### [0.5.1](https://www.github.com/zakodium-oss/react-iframe-bridge/compare/v0.5.0...v0.5.1) (2022-04-24)
 
 
