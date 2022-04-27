@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.7.1](https://www.github.com/zakodium-oss/react-iframe-bridge/compare/v0.7.0...v0.7.1) (2022-04-27)
+
+
+### Bug Fixes
+
+* add new roc generic type to useIframeBridgeContext ([22c895e](https://www.github.com/zakodium-oss/react-iframe-bridge/commit/22c895e53015e3085d8bd028e025f9e813237193))
+
 ## [0.7.0](https://www.github.com/zakodium-oss/react-iframe-bridge/compare/v0.6.0...v0.7.0) (2022-04-27)
 
 
