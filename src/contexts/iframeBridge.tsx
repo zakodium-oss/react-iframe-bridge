@@ -19,11 +19,12 @@ import { ActionType } from '../types/util';
 
 const iframeBridgeContext =
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  createContext<IframeBridgeReadyContextType<any> | null>(null);
+  createContext<IframeBridgeReadyContextType<any, any> | null>(null);
 
 export function useIframeBridgeContext<
   PublicUserInfo = unknown,
->(): IframeBridgeReadyContextType<PublicUserInfo> {
+  PrivateUserInfo = unknown,
+>(): IframeBridgeReadyContextType<PublicUserInfo, PrivateUserInfo> {
   const context = useContext(iframeBridgeContext);
   if (!context) {
     throw new Error('Iframe bridge context is not ready');
