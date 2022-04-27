@@ -42,35 +42,45 @@ export function useIframeBridgeSample(): RocDocument<
   return context.sample;
 }
 
-interface IframeBridgeContextType<PublicUserInfo = unknown> {
+interface IframeBridgeContextType<
+  PublicUserInfo = unknown,
+  PrivateUserInfo = unknown,
+> {
   state: 'initial' | 'loading' | 'ready' | 'standalone-error';
   data: IframeDataMessage | null;
-  roc: Roc<PublicUserInfo> | null;
+  roc: Roc<PublicUserInfo, PrivateUserInfo> | null;
   hasSample: boolean;
   sample: RocDocument<SampleEntryContent, SampleEntryId> | null;
 }
 
-interface IframeBridgeReadyContextTypeBase<PublicUserInfo> {
+interface IframeBridgeReadyContextTypeBase<PublicUserInfo, PrivateUserInfo> {
   state: 'ready';
   data: IframeDataMessage;
-  roc: Roc<PublicUserInfo>;
+  roc: Roc<PublicUserInfo, PrivateUserInfo>;
 }
 
-interface IframeBridgeReadyContextTypeWithSample<PublicUserInfo>
-  extends IframeBridgeReadyContextTypeBase<PublicUserInfo> {
+interface IframeBridgeReadyContextTypeWithSample<
+  PublicUserInfo,
+  PrivateUserInfo,
+> extends IframeBridgeReadyContextTypeBase<PublicUserInfo, PrivateUserInfo> {
   hasSample: true;
   sample: RocDocument<SampleEntryContent, SampleEntryId>;
 }
 
-interface IframeBridgeReadyContextTypeWithoutSample<PublicUserInfo>
-  extends IframeBridgeReadyContextTypeBase<PublicUserInfo> {
+interface IframeBridgeReadyContextTypeWithoutSample<
+  PublicUserInfo,
+  PrivateUserInfo,
+> extends IframeBridgeReadyContextTypeBase<PublicUserInfo, PrivateUserInfo> {
   hasSample: false;
   sample: null;
 }
 
-type IframeBridgeReadyContextType<PublicUserInfo = unknown> =
-  | IframeBridgeReadyContextTypeWithSample<PublicUserInfo>
-  | IframeBridgeReadyContextTypeWithoutSample<PublicUserInfo>;
+type IframeBridgeReadyContextType<
+  PublicUserInfo = unknown,
+  PrivateUserInfo = unknown,
+> =
+  | IframeBridgeReadyContextTypeWithSample<PublicUserInfo, PrivateUserInfo>
+  | IframeBridgeReadyContextTypeWithoutSample<PublicUserInfo, PrivateUserInfo>;
 
 interface IframeDataMessage {
   couchDB: {
