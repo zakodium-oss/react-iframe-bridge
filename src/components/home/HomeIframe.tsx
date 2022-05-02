@@ -10,7 +10,7 @@ interface AdminMessage {
   windowID: number;
 }
 
-export default function HomeIframe() {
+export default function HomeIframe(props: { baseUrl?: string }) {
   const { database, iframePage, rocUrl, selectedSample, iframeMode } =
     useHomeContext();
 
@@ -50,7 +50,7 @@ export default function HomeIframe() {
         <iframe
           key={selectedSample}
           allowFullScreen
-          src={`http://localhost:3000${iframePage}`}
+          src={`${props.baseUrl || ''}${iframePage}`}
           className="w-full h-full"
         />
       ) : (
