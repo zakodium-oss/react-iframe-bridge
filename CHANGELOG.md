@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.8.0](https://www.github.com/zakodium-oss/react-iframe-bridge/compare/v0.7.1...v0.8.0) (2022-05-02)
+
+
+### Features
+
+* allow custom baseUrl to be passed to Home component ([3d15735](https://www.github.com/zakodium-oss/react-iframe-bridge/commit/3d15735bcdfbd019eb0f535cbc5196af5996a0ef))
+
+
+### Bug Fixes
+
+* use an absolute path without domain as default iframe url ([b2d8e1e](https://www.github.com/zakodium-oss/react-iframe-bridge/commit/b2d8e1e9c0c86f73010a3e90c159a53360060e28))
+
 ### [0.7.1](https://www.github.com/zakodium-oss/react-iframe-bridge/compare/v0.7.0...v0.7.1) (2022-04-27)
 
 
