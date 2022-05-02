@@ -15,6 +15,7 @@ export interface HomeProps {
    * @default 'eln'
    */
   database?: string;
+  baseUrl?: string;
 }
 
 export function Home(props: HomeProps) {
@@ -27,7 +28,7 @@ export function Home(props: HomeProps) {
             <HomeNoSample />
             <HomeSamples />
           </div>
-          <HomeIframe />
+          <HomeIframe baseUrl={props.baseUrl} />
         </div>
       </div>
     </HomeContextProvider>
