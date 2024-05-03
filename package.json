@@ -28,18 +28,19 @@
   },
   "homepage": "https://github.com/zakodium-oss/react-iframe-bridge#readme",
   "dependencies": {
-    "clsx": "^1.1.1",
+    "clsx": "^2.1.1",
     "iframe-bridge": "^2.0.0",
-    "immer": "^9.0.5",
-    "rest-on-couch-client": "^5.2.0"
+    "immer": "^10.1.1",
+    "rest-on-couch-client": "^5.3.1"
   },
   "devDependencies": {
-    "@types/react": "^17.0.16",
-    "@types/react-dom": "^17.0.9",
-    "@zakodium/eslint-config": "^5.1.1",
-    "eslint": "^8.14.0",
-    "prettier": "^2.3.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-zakodium": "^9.0.1",
+    "prettier": "^3.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.4.5"
   }
 }

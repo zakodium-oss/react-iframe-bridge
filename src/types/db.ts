@@ -55,7 +55,7 @@ export interface SampleEntryContent {
     cas: Array<{ value: string }>;
   };
   spectra: {
-    nmr: Array<SampleEntrySpectraNmr>;
+    nmr: SampleEntrySpectraNmr[];
   };
 }
 
