@@ -1,6 +1,6 @@
 // https://github.com/import-js/eslint-plugin-import/issues/1810
 
-import { registerHandler, postMessage } from 'iframe-bridge/main';
+import { postMessage, registerHandler } from 'iframe-bridge/main';
 import { useEffect, useState } from 'react';
 
 import { useHomeContext } from './HomeContext';
@@ -10,7 +10,12 @@ interface AdminMessage {
   windowID: number;
 }
 
-export default function HomeIframe(props: { baseUrl?: string }) {
+interface HomeIframeProps {
+  baseUrl?: string;
+}
+
+export default function HomeIframe(props: HomeIframeProps) {
+  const { baseUrl } = props;
   const { database, iframePage, rocUrl, selectedSample, iframeMode } =
     useHomeContext();
 
@@ -50,7 +55,7 @@ export default function HomeIframe(props: { baseUrl?: string }) {
         <iframe
           key={selectedSample}
           allowFullScreen
-          src={`${props.baseUrl || ''}${iframePage}`}
+          src={`${baseUrl || ''}${iframePage}`}
           className="w-full h-full"
         />
       ) : (
