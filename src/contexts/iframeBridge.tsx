@@ -1,6 +1,6 @@
 // https://github.com/import-js/eslint-plugin-import/issues/1810
-/* eslint-disable import/no-unresolved */
-import { ready, onMessage } from 'iframe-bridge/iframe';
+
+import { onMessage, ready } from 'iframe-bridge/iframe';
 import { produce } from 'immer';
 import {
   createContext,
@@ -182,7 +182,7 @@ export function IframeBridgeProvider(props: {
   }, [props.allowStandalone, state.state]);
 
   useEffect(() => {
-    if (!state.roc || !state.data || !state.data.uuid) return;
+    if (!state.roc || !state.data?.uuid) return;
     let cancelled = false;
     const document = state.roc.getDocument<SampleEntryContent, SampleEntryId>(
       state.data.uuid,
@@ -194,7 +194,7 @@ export function IframeBridgeProvider(props: {
           dispatch({ type: 'SET_SAMPLE', payload: document });
         }
       })
-      .catch((error) => {
+      .catch((error: unknown) => {
         // TODO: handle error
         // eslint-disable-next-line no-console
         console.error(error);

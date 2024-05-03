@@ -8,13 +8,13 @@ export type RocQueryResult<T> = IQueryResult<[string, string], T>;
 interface RocQueryState<T = unknown> {
   loading: boolean;
   error: null | Error;
-  result: null | RocQueryResult<T>[];
+  result: null | Array<RocQueryResult<T>>;
 }
 
 type RocQueryHookResult<T> = RocQueryState<T>;
 
 type RocQueryAction<T> =
-  | { type: 'SET_RESULT'; value: RocQueryResult<T>[] }
+  | { type: 'SET_RESULT'; value: Array<RocQueryResult<T>> }
   | { type: 'ERROR'; value: Error }
   | { type: 'LOAD' };
 
@@ -65,8 +65,8 @@ export function useRocQuery<T = unknown>(
     query
       .fetch()
       .then((result) => dispatch({ type: 'SET_RESULT', value: result }))
-      .catch((err) => {
-        dispatch({ type: 'ERROR', value: err });
+      .catch((err: unknown) => {
+        dispatch({ type: 'ERROR', value: err as Error });
       });
   }, [roc, viewName, mine]);
 

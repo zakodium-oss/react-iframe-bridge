@@ -20,7 +20,7 @@ export default function HomeSamples() {
   );
 }
 
-function SampleToc(props: { samples: RocQueryResult<TocEntry>[] }) {
+function SampleToc(props: { samples: Array<RocQueryResult<TocEntry>> }) {
   const { selectedSample } = useHomeContext();
   const dispatch = useHomeDispatchContext();
   function selectSample(id: string) {
