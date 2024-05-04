@@ -16,20 +16,26 @@ import { getItem } from '../../utils/localStorage';
 interface HomeContextType {
   rocUrl: string;
   database: string;
-  iframePage: string;
+  iframePath: string;
   iframeMode: 'closed' | 'sample' | 'no-sample';
   selectedSample: string | null;
 }
 
 function getInitialHomeContext(
-  config: { rocUrl?: string; database?: string } = {},
+  config: Pick<
+    HomeContextProviderProps,
+    'rocUrl' | 'database' | 'defaultPath'
+  > = {},
 ): HomeContextType {
-  const { rocUrl = 'http://localhost:3000/api/fake-roc', database = 'eln' } =
-    config;
+  const {
+    rocUrl = 'http://localhost:3000/api/fake-roc',
+    database = 'eln',
+    defaultPath = '/dev/base-page',
+  } = config;
   return {
     rocUrl,
     database,
-    iframePage: (getItem('dev-home-iframePage') as string) || '/dev/base-page',
+    iframePath: (getItem('dev-home-iframe-path') as string) || defaultPath,
     iframeMode: 'closed',
     selectedSample: null,
   };
@@ -52,7 +58,7 @@ const homeReducer: Reducer<HomeContextType, HomeContextAction> = produce(
         state.selectedSample = action.payload;
         break;
       case 'SET_IFRAME_PAGE':
-        state.iframePage = action.payload;
+        state.iframePath = action.payload;
         break;
       default:
         throw new Error('unreachable');
@@ -67,25 +73,25 @@ const homeDispatchContext = createContext<Dispatch<HomeContextAction>>(() => {
 
 interface HomeContextProviderProps {
   children: ReactNode;
-  // eslint-disable-next-line react/no-unused-prop-types
   rocUrl?: string;
-  // eslint-disable-next-line react/no-unused-prop-types
   database?: string;
+  defaultPath?: string;
 }
 
 export function HomeContextProvider(props: HomeContextProviderProps) {
+  const { children, ...initial } = props;
   const [homeState, dispatch] = useReducer(
     homeReducer,
-    props,
+    initial,
     getInitialHomeContext,
   );
-  useSaveToLocalStorage('dev-home-iframePage', homeState.iframePage);
+  useSaveToLocalStorage('dev-home-iframe-path', homeState.iframePath);
 
   return (
     <homeContext.Provider value={homeState}>
       <homeDispatchContext.Provider value={dispatch}>
         <RocProvider url={homeState.rocUrl} database={homeState.database}>
-          {props.children}
+          {children}
         </RocProvider>
       </homeDispatchContext.Provider>
     </homeContext.Provider>
