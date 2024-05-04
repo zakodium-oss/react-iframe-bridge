@@ -16,7 +16,7 @@ interface HomeIframeProps {
 
 export default function HomeIframe(props: HomeIframeProps) {
   const { baseUrl } = props;
-  const { database, iframePage, rocUrl, selectedSample, iframeMode } =
+  const { database, iframePath, rocUrl, selectedSample, iframeMode } =
     useHomeContext();
 
   const [windowId, setWindowId] = useState<number>();
@@ -55,7 +55,7 @@ export default function HomeIframe(props: HomeIframeProps) {
         <iframe
           key={selectedSample}
           allowFullScreen
-          src={`${baseUrl || ''}${iframePage}`}
+          src={`${baseUrl || ''}${iframePath}`}
           className="w-full h-full"
         />
       ) : (

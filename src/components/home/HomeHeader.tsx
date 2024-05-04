@@ -1,7 +1,7 @@
 import { useHomeContext, useHomeDispatchContext } from './HomeContext';
 
 export default function HomeHeader() {
-  const { rocUrl, database, iframePage } = useHomeContext();
+  const { rocUrl, database, iframePath } = useHomeContext();
   const dispatch = useHomeDispatchContext();
   return (
     <header className="flex flex-row p-2 space-x-4">
@@ -21,7 +21,7 @@ export default function HomeHeader() {
       />
       <input
         name="iframe-page"
-        value={iframePage}
+        value={iframePath}
         type="text"
         className="flex-1 form-input"
         onChange={(event) => {
