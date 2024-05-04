@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.9.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v0.8.0...v0.9.0) (2024-05-04)
+
+
+### Features
+
+* add defaultPath prop to Home ([bf4fe13](https://github.com/zakodium-oss/react-iframe-bridge/commit/bf4fe1329d116b7c9d7759e052c3f1e0c6304cd0))
+* make sample selection optional ([c9faf83](https://github.com/zakodium-oss/react-iframe-bridge/commit/c9faf83c395d98d8371b40806fc1b03a799175d4))
+* update rest on couch client ([#27](https://github.com/zakodium-oss/react-iframe-bridge/issues/27)) ([ad23ed7](https://github.com/zakodium-oss/react-iframe-bridge/commit/ad23ed7e6cbbb11d62634a581128aa1bc3b8b3da))
+
 ## [0.8.0](https://www.github.com/zakodium-oss/react-iframe-bridge/compare/v0.7.1...v0.8.0) (2022-05-02)
 
 
