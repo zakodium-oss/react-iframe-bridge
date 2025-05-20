@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v0.9.0...v1.0.0) (2025-05-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* update for TailwindCSS v4
+
+### Code Refactoring
+
+* update for TailwindCSS v4 ([7e9c6c3](https://github.com/zakodium-oss/react-iframe-bridge/commit/7e9c6c3a7cd4545a801e42818a269995d3d8d655))
+
 ## [0.9.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v0.8.0...v0.9.0) (2024-05-04)
 
 
