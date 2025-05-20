@@ -1,5 +1,6 @@
-import { RocQueryResult, useRocQuery } from '../../hooks/useRocQuery';
-import { TocEntry } from '../../types/db';
+import type { RocQueryResult } from '../../hooks/useRocQuery';
+import { useRocQuery } from '../../hooks/useRocQuery';
+import type { TocEntry } from '../../types/db';
 import Spinner from '../Spinner';
 
 import { useHomeContext, useHomeDispatchContext } from './HomeContext';

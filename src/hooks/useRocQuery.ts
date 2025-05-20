@@ -1,5 +1,6 @@
-import { Reducer, useEffect, useReducer } from 'react';
-import { IQueryResult } from 'rest-on-couch-client';
+import type { Reducer } from 'react';
+import { useEffect, useReducer } from 'react';
+import type { IQueryResult } from 'rest-on-couch-client';
 
 import { useRoc } from '../contexts/roc';
 

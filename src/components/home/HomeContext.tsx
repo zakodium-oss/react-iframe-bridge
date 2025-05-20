@@ -1,16 +1,10 @@
 import { produce } from 'immer';
-import {
-  createContext,
-  Dispatch,
-  ReactNode,
-  Reducer,
-  useContext,
-  useReducer,
-} from 'react';
+import type { Dispatch, ReactNode, Reducer } from 'react';
+import { createContext, useContext, useReducer } from 'react';
 
 import { RocProvider } from '../../contexts/roc';
 import { useSaveToLocalStorage } from '../../hooks/localStorage';
-import { ActionType } from '../../types/util';
+import type { ActionType } from '../../types/util';
 import { getItem } from '../../utils/localStorage';
 
 interface HomeContextType {

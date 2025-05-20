@@ -38,10 +38,7 @@ export function useLocalStorage<ValueType>(
  * @param key localStorage key. Will be appended to the `react-iframe-bridge-` prefix.
  * @param value Value to save.
  */
-export function useSaveToLocalStorage<ValueType>(
-  key: string,
-  value: ValueType,
-): void {
+export function useSaveToLocalStorage(key: string, value: unknown): void {
   useEffect(() => {
     setItem(key, value);
   }, [key, value]);

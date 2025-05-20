@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useContext, useMemo } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 import { Roc } from 'rest-on-couch-client';
 
 const rocContext = createContext<Roc | null>(null);

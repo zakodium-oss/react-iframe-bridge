@@ -36,11 +36,11 @@
   "devDependencies": {
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
-    "eslint": "^8.57.0",
-    "eslint-config-zakodium": "^9.0.1",
-    "prettier": "^3.2.5",
+    "eslint": "^9.27.0",
+    "eslint-config-zakodium": "^15.0.1",
+    "prettier": "^3.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript": "^5.4.5"
+    "typescript": "^5.8.3"
   }
 }

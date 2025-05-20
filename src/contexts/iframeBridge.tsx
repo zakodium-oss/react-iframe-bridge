@@ -2,20 +2,15 @@
 
 import { onMessage, ready } from 'iframe-bridge/iframe';
 import { produce } from 'immer';
-import {
-  createContext,
-  ReactNode,
-  Reducer,
-  useContext,
-  useEffect,
-  useReducer,
-} from 'react';
-import { Roc, RocDocument } from 'rest-on-couch-client';
+import type { ReactNode, Reducer } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
+import type { RocDocument } from 'rest-on-couch-client';
+import { Roc } from 'rest-on-couch-client';
 
 import ErrorPage from '../components/ErrorPage';
 import LoadingFull from '../components/LoadingFull';
-import { SampleEntryContent, SampleEntryId } from '../types/db';
-import { ActionType } from '../types/util';
+import type { SampleEntryContent, SampleEntryId } from '../types/db';
+import type { ActionType } from '../types/util';
 
 const iframeBridgeContext =
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,5 +1,0 @@
-extends:
-  - zakodium/ts
-  - zakodium/react
-rules:
-  react-refresh/only-export-components: off
