@@ -10,12 +10,9 @@ Install the package:
 npm i react-iframe-bridge
 ```
 
-Add the package's files to TailwindCSS' purge configuration:
+Add the package's files to TailwindCSS configuration:
 
-```javascript
-module.exports = {
-  purge: {
-    './node_modules/react-iframe-bridge/lib/**/*.js',
-  },
-};
+```css
+@import 'tailwindcss';
+@source '../node_modules/react-iframe-bridge/lib';
 ```
