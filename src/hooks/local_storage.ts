@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { getItem, setItem } from '../utils/localStorage';
+import { getItem, setItem } from '../utils/local_storage.js';
 
 /**
  * Like `useState`, but initializing from `localStorage` if available and saving

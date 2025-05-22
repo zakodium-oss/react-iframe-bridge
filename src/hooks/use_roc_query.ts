@@ -2,7 +2,7 @@ import type { Reducer } from 'react';
 import { useEffect, useReducer } from 'react';
 import type { IQueryResult } from 'rest-on-couch-client';
 
-import { useRoc } from '../contexts/roc';
+import { useRoc } from '../contexts/roc.js';
 
 export type RocQueryResult<T> = IQueryResult<[string, string], T>;
 

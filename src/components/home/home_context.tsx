@@ -2,10 +2,10 @@ import { produce } from 'immer';
 import type { Dispatch, ReactNode, Reducer } from 'react';
 import { createContext, useContext, useReducer } from 'react';
 
-import { RocProvider } from '../../contexts/roc';
-import { useSaveToLocalStorage } from '../../hooks/localStorage';
-import type { ActionType } from '../../types/util';
-import { getItem } from '../../utils/localStorage';
+import { RocProvider } from '../../contexts/roc.js';
+import { useSaveToLocalStorage } from '../../hooks/local_storage.js';
+import type { ActionType } from '../../types/util.js';
+import { getItem } from '../../utils/local_storage.js';
 
 interface HomeContextType {
   rocUrl: string;

@@ -41,6 +41,8 @@ export interface SampleEntry {
 
 export interface SampleEntryContent {
   general: {
+    title?: string;
+    name?: Array<{ value: string }>;
     mf: string;
     mw: number;
     em: number;

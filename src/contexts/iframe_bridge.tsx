@@ -7,14 +7,15 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 import type { RocDocument } from 'rest-on-couch-client';
 import { Roc } from 'rest-on-couch-client';
 
-import ErrorPage from '../components/ErrorPage';
-import LoadingFull from '../components/LoadingFull';
-import type { SampleEntryContent, SampleEntryId } from '../types/db';
-import type { ActionType } from '../types/util';
+import ErrorPage from '../components/error_page.js';
+import LoadingFull from '../components/loading_full.js';
+import type { SampleEntryContent, SampleEntryId } from '../types/db.js';
+import type { ActionType } from '../types/util.js';
 
-const iframeBridgeContext =
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  createContext<IframeBridgeReadyContextType<any, any> | null>(null);
+const iframeBridgeContext = createContext<IframeBridgeReadyContextType<
+  any,
+  any
+> | null>(null);
 
 export function useIframeBridgeContext<
   PublicUserInfo = unknown,
@@ -210,7 +211,7 @@ export function IframeBridgeProvider(props: {
 
   if (state.state !== 'ready') {
     return (
-      <div className="w-screen h-screen">
+      <div style={{ width: '100vw', height: '100vh' }}>
         <LoadingFull />
       </div>
     );

@@ -1,10 +1,10 @@
-import type { RocQueryResult } from '../../hooks/useRocQuery';
-import { useRocQuery } from '../../hooks/useRocQuery';
-import type { TocEntry } from '../../types/db';
-import Spinner from '../Spinner';
+import type { RocQueryResult } from '../../hooks/use_roc_query.js';
+import { useRocQuery } from '../../hooks/use_roc_query.js';
+import type { TocEntry } from '../../types/db.js';
+import Spinner from '../spinner.js';
 
-import { useHomeContext, useHomeDispatchContext } from './HomeContext';
-import HomeSelector from './HomeSelector';
+import { useHomeContext, useHomeDispatchContext } from './home_context.js';
+import HomeSelector from './home_selector.js';
 
 export default function HomeSamples() {
   const { loading, error, result } = useRocQuery<TocEntry>('sample_toc');
@@ -13,8 +13,17 @@ export default function HomeSamples() {
   }
   return (
     <>
-      <h1 className="mb-4 text-lg font-bold text-center">Sample TOC</h1>
-      <div className="flex-1">
+      <h1
+        style={{
+          marginBottom: '1rem',
+          textAlign: 'center',
+          fontSize: '1.125rem',
+          fontWeight: 'bold',
+        }}
+      >
+        Sample TOC
+      </h1>
+      <div style={{ flex: 1 }}>
         {loading || !result ? <Loading /> : <SampleToc samples={result} />}
       </div>
     </>
@@ -29,7 +38,7 @@ function SampleToc(props: { samples: Array<RocQueryResult<TocEntry>> }) {
   }
 
   return (
-    <div className="space-y-2">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
       {props.samples.map((sample) => (
         <HomeSelector
           key={sample.id}
@@ -44,8 +53,10 @@ function SampleToc(props: { samples: Array<RocQueryResult<TocEntry>> }) {
 
 function Loading() {
   return (
-    <div className="flex justify-center mt-8">
-      <Spinner className="w-8 h-8 text-alternative-500" />
+    <div
+      style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}
+    >
+      <Spinner style={{ width: '2rem', height: '2rem', color: '#6a7282' }} />
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
-import { HomeContextProvider, useHomeDispatchContext } from './HomeContext';
-import HomeHeader from './HomeHeader';
-import HomeIframe from './HomeIframe';
-import HomeNoSample from './HomeNoSample';
-import HomeSamples from './HomeSamples';
+import { HomeContextProvider, useHomeDispatchContext } from './home_context.js';
+import HomeHeader from './home_header.js';
+import HomeIframe from './home_iframe.js';
+import HomeNoSample from './home_no_sample.js';
+import HomeSamples from './home_samples.js';
 
 export interface HomeProps {
   /**
@@ -55,11 +55,38 @@ function HomeInternal(props: Pick<HomeProps, 'baseUrl' | 'noSampleSelection'>) {
     }
   }, [props.noSampleSelection, homeDispatch]);
   return (
-    <div className="flex flex-col w-screen h-screen">
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100vw',
+        height: '100vh',
+      }}
+    >
       <HomeHeader />
-      <div className="flex flex-row flex-1 mt-2 border-t border-neutral-300 min-h-0">
+      <div
+        style={{
+          marginTop: '0.5rem',
+          display: 'flex',
+          minHeight: 0,
+          flex: 1,
+          flexDirection: 'row',
+          borderTop: '1px solid #d1d5dc',
+        }}
+      >
         {!props.noSampleSelection && (
-          <div className="flex flex-col w-48 px-2 pt-4 space-y-3 border-r border-neutral-300 overflow-auto">
+          <div
+            style={{
+              display: 'flex',
+              width: '12rem',
+              flexDirection: 'column',
+              gap: '0.75rem',
+              overflow: 'auto',
+              borderRight: '1px solid #d1d5dc',
+              paddingInline: '0.5rem',
+              paddingTop: '1rem',
+            }}
+          >
             <HomeNoSample />
             <HomeSamples />
           </div>

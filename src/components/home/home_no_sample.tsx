@@ -1,5 +1,5 @@
-import { useHomeContext, useHomeDispatchContext } from './HomeContext';
-import HomeSelector from './HomeSelector';
+import { useHomeContext, useHomeDispatchContext } from './home_context.js';
+import HomeSelector from './home_selector.js';
 
 export default function HomeNoSample() {
   const { iframeMode } = useHomeContext();

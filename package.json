@@ -2,15 +2,15 @@
   "name": "react-iframe-bridge",
   "version": "1.0.0",
   "description": "React hooks and components to work with iframe-bridge.",
-  "main": "lib-cjs/index.js",
-  "module": "lib/index.js",
+  "type": "module",
+  "exports": "./lib/index.js",
   "files": [
     "lib",
-    "lib-cjs"
+    "src"
   ],
   "scripts": {
     "check-types": "tsc --noEmit",
-    "compile": "tsc && tsc -p tsconfig.cjs.json",
+    "compile": "tsc",
     "eslint": "eslint .",
     "eslint-fix": "npm run eslint -- --fix",
     "prepack": "npm run compile",
@@ -28,12 +28,12 @@
   },
   "homepage": "https://github.com/zakodium-oss/react-iframe-bridge#readme",
   "dependencies": {
-    "clsx": "^2.1.1",
-    "iframe-bridge": "^2.0.0",
+    "iframe-bridge": "^3.0.1",
     "immer": "^10.1.1",
     "rest-on-couch-client": "^5.3.1"
   },
   "devDependencies": {
+    "@types/node": "^22.15.21",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "eslint": "^9.27.0",

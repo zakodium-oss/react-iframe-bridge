@@ -3,7 +3,7 @@
 import { postMessage, registerHandler } from 'iframe-bridge/main';
 import { useEffect, useState } from 'react';
 
-import { useHomeContext } from './HomeContext';
+import { useHomeContext } from './home_context.js';
 
 interface AdminMessage {
   type: 'admin.connect';
@@ -50,13 +50,20 @@ export default function HomeIframe(props: HomeIframeProps) {
   }, [windowId, database, rocUrl, selectedSample]);
 
   return (
-    <div className="flex items-center justify-center flex-1">
+    <div
+      style={{
+        display: 'flex',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       {iframeMode !== 'closed' ? (
         <iframe
           key={selectedSample}
           allowFullScreen
           src={`${baseUrl || ''}${iframePath}`}
-          className="w-full h-full"
+          style={{ width: '100%', height: '100%' }}
         />
       ) : (
         <div>Please select something</div>
