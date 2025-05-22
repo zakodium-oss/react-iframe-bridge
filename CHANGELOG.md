@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v1.0.0...v2.0.0) (2025-05-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* do not require TailwindCSS and make package ESM-only
+
+### Features
+
+* do not require TailwindCSS and make package ESM-only ([0bc54cd](https://github.com/zakodium-oss/react-iframe-bridge/commit/0bc54cd66d2634e91775239782c81f70c0756715))
+
 ## [1.0.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v0.9.0...v1.0.0) (2025-05-20)
 
 
