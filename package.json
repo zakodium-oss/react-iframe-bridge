@@ -32,6 +32,9 @@
     "immer": "^10.1.1",
     "rest-on-couch-client": "^5.3.1"
   },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
   "devDependencies": {
     "@types/node": "^24.0.13",
     "@types/react": "^18.3.1",
