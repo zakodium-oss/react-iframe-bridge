@@ -175,6 +175,7 @@ export function IframeBridgeProvider(props: {
       }, 3000);
       return () => clearTimeout(timeout);
     }
+    return undefined;
   }, [props.allowStandalone, state.state]);
 
   useEffect(() => {
