@@ -9,7 +9,7 @@ import HomeSelector from './home_selector.js';
 export default function HomeSamples() {
   const { loading, error, result } = useRocQuery<TocEntry>('sample_toc');
   if (error) {
-    throw error;
+    return <div>Failed to load sample ToC: {error?.message}</div>;
   }
   return (
     <>
