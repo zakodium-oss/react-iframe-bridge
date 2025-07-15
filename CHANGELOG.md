@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.0.0...v2.0.1) (2025-07-15)
+
+
+### Bug Fixes
+
+* add react as peer dependency ([3a49576](https://github.com/zakodium-oss/react-iframe-bridge/commit/3a49576cb8ba5e2755c03ede24a524eb9b018bbc))
+* do not crash if ToC fails to load ([ec1b36c](https://github.com/zakodium-oss/react-iframe-bridge/commit/ec1b36c08f64a054d26f6f7ffd671903f921c51c))
+
 ## [2.0.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v1.0.0...v2.0.0) (2025-05-22)
 
 
