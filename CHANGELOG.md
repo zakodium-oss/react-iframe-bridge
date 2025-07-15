@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.0.1...v2.0.2) (2025-07-15)
+
+
+### Bug Fixes
+
+* update rest-on-couch-client ([#36](https://github.com/zakodium-oss/react-iframe-bridge/issues/36)) ([8adee19](https://github.com/zakodium-oss/react-iframe-bridge/commit/8adee19d7bdebae81568696e29c703516b3d94f6))
+
 ## [2.0.1](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.0.0...v2.0.1) (2025-07-15)
 
 
