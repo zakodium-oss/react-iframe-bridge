@@ -1,6 +1,6 @@
 {
   "name": "react-iframe-bridge",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "React hooks and components to work with iframe-bridge.",
   "type": "module",
   "exports": "./lib/index.js",
