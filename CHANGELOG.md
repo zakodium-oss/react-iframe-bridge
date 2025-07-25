@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.0.2...v2.1.0) (2025-07-25)
+
+
+### Features
+
+* **home:** add `pages` prop to build a datalist for autocomplete ([#38](https://github.com/zakodium-oss/react-iframe-bridge/issues/38)) ([15778ec](https://github.com/zakodium-oss/react-iframe-bridge/commit/15778ec43c7c7dba09d956a116d408c0c2ebff67))
+
 ## [2.0.2](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.0.1...v2.0.2) (2025-07-15)
 
 
