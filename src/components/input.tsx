@@ -6,12 +6,13 @@ interface InputProps {
   value: string;
   readOnly?: boolean;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  list?: string;
 }
 
 export default function Input(props: InputProps) {
+  const { style, ...otherProps } = props;
   return (
     <input
-      name={props.name}
       type="text"
       style={{
         appearance: 'none',
@@ -21,11 +22,9 @@ export default function Input(props: InputProps) {
         paddingBlock: '0.5rem',
         fontSize: '1rem',
         lineHeight: 1,
-        ...props.style,
+        ...style,
       }}
-      value={props.value}
-      readOnly={props.readOnly}
-      onChange={props.onChange}
+      {...otherProps}
     />
   );
 }
