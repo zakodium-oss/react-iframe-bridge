@@ -26,6 +26,10 @@ export interface HomeProps {
    */
   defaultPath?: string;
   /**
+   * List of possible page paths. Used for autocomplete in the path input.
+   */
+  pages?: string[];
+  /**
    * Opt out of selecting a sample / selecting no sample before loading the iframe.
    * The sample selection UI will be hidden and the iframe will automatically load without a selected sample.
    */
@@ -33,27 +37,35 @@ export interface HomeProps {
 }
 
 export function Home(props: HomeProps) {
-  const { baseUrl, noSampleSelection, rocUrl, database, defaultPath } = props;
+  const { baseUrl, noSampleSelection, rocUrl, database, defaultPath, pages } =
+    props;
   return (
     <HomeContextProvider
       rocUrl={rocUrl}
       database={database}
       defaultPath={defaultPath}
     >
-      <HomeInternal noSampleSelection={noSampleSelection} baseUrl={baseUrl} />
+      <HomeInternal
+        noSampleSelection={noSampleSelection}
+        baseUrl={baseUrl}
+        pages={pages}
+      />
     </HomeContextProvider>
   );
 }
 
-function HomeInternal(props: Pick<HomeProps, 'baseUrl' | 'noSampleSelection'>) {
+function HomeInternal(
+  props: Pick<HomeProps, 'baseUrl' | 'noSampleSelection' | 'pages'>,
+) {
+  const { noSampleSelection, baseUrl, pages } = props;
   const homeDispatch = useHomeDispatchContext();
   useEffect(() => {
-    if (props.noSampleSelection) {
+    if (noSampleSelection) {
       homeDispatch({
         type: 'OPEN_NO_SAMPLE',
       });
     }
-  }, [props.noSampleSelection, homeDispatch]);
+  }, [noSampleSelection, homeDispatch]);
   return (
     <div
       style={{
@@ -63,7 +75,7 @@ function HomeInternal(props: Pick<HomeProps, 'baseUrl' | 'noSampleSelection'>) {
         height: '100vh',
       }}
     >
-      <HomeHeader />
+      <HomeHeader pages={pages} />
       <div
         style={{
           marginTop: '0.5rem',
@@ -74,7 +86,7 @@ function HomeInternal(props: Pick<HomeProps, 'baseUrl' | 'noSampleSelection'>) {
           borderTop: '1px solid #d1d5dc',
         }}
       >
-        {!props.noSampleSelection && (
+        {!noSampleSelection && (
           <div
             style={{
               display: 'flex',
@@ -91,7 +103,7 @@ function HomeInternal(props: Pick<HomeProps, 'baseUrl' | 'noSampleSelection'>) {
             <HomeSamples />
           </div>
         )}
-        <HomeIframe baseUrl={props.baseUrl} />
+        <HomeIframe baseUrl={baseUrl} />
       </div>
     </div>
   );

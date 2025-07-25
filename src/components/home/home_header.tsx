@@ -1,10 +1,18 @@
+import { useId } from 'react';
+
 import Input from '../input.js';
 
 import { useHomeContext, useHomeDispatchContext } from './home_context.js';
 
-export default function HomeHeader() {
+interface HomeHeaderProps {
+  pages?: string[];
+}
+
+export default function HomeHeader(props: HomeHeaderProps) {
+  const { pages = [] } = props;
   const { rocUrl, database, iframePath } = useHomeContext();
   const dispatch = useHomeDispatchContext();
+  const pageListId = useId();
   return (
     <header
       style={{
@@ -23,7 +31,13 @@ export default function HomeHeader() {
         onChange={(event) => {
           dispatch({ type: 'SET_IFRAME_PAGE', payload: event.target.value });
         }}
+        list={pageListId}
       />
+      <datalist id={pageListId}>
+        {pages.map((page) => (
+          <option key={page} value={page} />
+        ))}
+      </datalist>
     </header>
   );
 }
