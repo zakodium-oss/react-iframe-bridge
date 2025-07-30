@@ -5,3 +5,4 @@ export {
   useIframeBridgeContext,
   useIframeBridgeSample,
 } from './contexts/iframe_bridge.js';
+export * from './types/db.js';
