@@ -1,13 +1,13 @@
 import type { RocQueryResult } from '../../hooks/use_roc_query.js';
 import { useRocQuery } from '../../hooks/use_roc_query.js';
-import type { TocEntry } from '../../types/db.js';
+import type { SampleTocEntry } from '../../types/db.js';
 import Spinner from '../spinner.js';
 
 import { useHomeContext, useHomeDispatchContext } from './home_context.js';
 import HomeSelector from './home_selector.js';
 
 export default function HomeSamples() {
-  const { loading, error, result } = useRocQuery<TocEntry>('sample_toc');
+  const { loading, error, result } = useRocQuery<SampleTocEntry>('sample_toc');
   if (error) {
     return <div>Failed to load sample ToC: {error?.message}</div>;
   }
@@ -30,7 +30,7 @@ export default function HomeSamples() {
   );
 }
 
-function SampleToc(props: { samples: Array<RocQueryResult<TocEntry>> }) {
+function SampleToc(props: { samples: Array<RocQueryResult<SampleTocEntry>> }) {
   const { selectedSample } = useHomeContext();
   const dispatch = useHomeDispatchContext();
   function selectSample(id: string) {

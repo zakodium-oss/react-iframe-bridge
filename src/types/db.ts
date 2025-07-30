@@ -1,4 +1,4 @@
-export interface TocEntry {
+export interface SampleTocEntry {
   mf: string;
   mw: number;
   keyword: string[];
@@ -78,4 +78,5 @@ export interface SampleEntrySpectraNmr {
   jcamp: {
     filename: string;
   };
+  nmrium: any;
 }
