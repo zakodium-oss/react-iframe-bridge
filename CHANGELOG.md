@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.1.0...v2.1.1) (2025-07-30)
+
+
+### Bug Fixes
+
+* **types:** export database types and add nmrium field for NMR ([#41](https://github.com/zakodium-oss/react-iframe-bridge/issues/41)) ([45d347f](https://github.com/zakodium-oss/react-iframe-bridge/commit/45d347f45315ab1ef650feb24b9a01c088cfa034))
+
 ## [2.1.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.0.2...v2.1.0) (2025-07-25)
 
 
