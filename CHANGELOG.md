@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.2](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.1.1...v2.1.2) (2025-08-14)
+
+
+### Bug Fixes
+
+* exports ([#43](https://github.com/zakodium-oss/react-iframe-bridge/issues/43)) ([db23b37](https://github.com/zakodium-oss/react-iframe-bridge/commit/db23b37e3ddb080ef4d9f7b942e3a55f6d6279a9))
+
 ## [2.1.1](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.1.0...v2.1.1) (2025-07-30)
 
 
