@@ -1,9 +1,12 @@
 {
   "name": "react-iframe-bridge",
   "version": "2.1.1",
+  "license": "MIT",
   "description": "React hooks and components to work with iframe-bridge.",
   "type": "module",
-  "exports": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js"
+  },
   "files": [
     "lib",
     "src"
@@ -16,17 +19,8 @@
     "prepack": "npm run compile",
     "prettier": "prettier --check .",
     "prettier-write": "prettier --write .",
-    "test": "npm run eslint && npm run prettier && npm run check-types"
+    "test": "npm run check-types && npm run eslint && npm run prettier"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zakodium-oss/react-iframe-bridge.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zakodium-oss/react-iframe-bridge/issues"
-  },
-  "homepage": "https://github.com/zakodium-oss/react-iframe-bridge#readme",
   "dependencies": {
     "iframe-bridge": "^3.0.2",
     "immer": "^10.1.1",
@@ -36,15 +30,23 @@
     "react": ">=18.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.0.13",
+    "@types/node": "^24.2.1",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "@zakodium/tsconfig": "^1.0.2",
-    "eslint": "^9.31.0",
+    "eslint": "^9.33.0",
     "eslint-config-zakodium": "^16.0.0",
     "prettier": "^3.6.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript": "^5.8.3"
-  }
+    "typescript": "^5.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakodium-oss/react-iframe-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zakodium-oss/react-iframe-bridge/issues"
+  },
+  "homepage": "https://github.com/zakodium-oss/react-iframe-bridge#readme"
 }
