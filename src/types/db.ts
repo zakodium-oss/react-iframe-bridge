@@ -40,43 +40,46 @@ export interface SampleEntry {
 }
 
 export interface SampleEntryContent {
-  general: {
+  general?: {
     title?: string;
     name?: Array<{ value: string }>;
-    mf: string;
-    mw: number;
-    em: number;
-    molfile: string;
-    ocl: {
+    mf?: string;
+    mw?: number;
+    em?: number;
+    molfile?: string;
+    ocl?: {
       value: string;
       coordinates: string;
       index: number[];
     };
   };
-  identifier: {
-    cas: Array<{ value: string }>;
+  identifier?: {
+    cas?: Array<{ value: string }>;
   };
-  spectra: {
-    nmr: SampleEntrySpectraNmr[];
+  spectra?: {
+    nmr?: SampleEntrySpectraNmr[];
   };
 }
 
 export interface SampleEntrySpectraNmr {
-  dimension: number;
-  nucleus: string[];
-  isFid: boolean;
-  isFt: boolean;
-  title: string;
-  solvent: string;
-  pulse: string;
-  experiment: string;
-  temperature: number;
-  frequency: number;
-  type: string;
-  date: string;
-  range: unknown[];
-  jcamp: {
+  dimension?: number;
+  nucleus?: string[];
+  isFid?: boolean;
+  isFt?: boolean;
+  title?: string;
+  solvent?: string;
+  pulse?: string;
+  experiment?: string;
+  temperature?: number;
+  frequency?: number;
+  type?: string;
+  date?: string;
+  range?: unknown[];
+  jcamp?: {
     filename: string;
   };
-  nmrium: any;
+  file?: {
+    filename: string;
+  };
+  nmrium?: unknown;
 }
