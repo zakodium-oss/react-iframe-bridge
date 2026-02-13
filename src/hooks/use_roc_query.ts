@@ -1,4 +1,3 @@
-import type { Reducer } from 'react';
 import { useEffect, useReducer } from 'react';
 import type { IQueryResult } from 'rest-on-couch-client';
 
@@ -53,13 +52,14 @@ export function useRocQuery<T = unknown>(
 ): RocQueryHookResult<T> {
   const { mine = false } = options;
   const roc = useRoc();
-  const [state, dispatch] = useReducer<
-    Reducer<RocQueryState<T>, RocQueryAction<T>>
-  >(rocQueryReducer, {
-    loading: true,
-    error: null,
-    result: null,
-  });
+  const [state, dispatch] = useReducer<RocQueryState<T>, [RocQueryAction<T>]>(
+    rocQueryReducer,
+    {
+      loading: true,
+      error: null,
+      result: null,
+    },
+  );
   useEffect(() => {
     dispatch({ type: 'LOAD' });
     const query = roc.getQuery<[string, string], T>(viewName, { mine });
