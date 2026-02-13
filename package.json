@@ -24,7 +24,7 @@
   "dependencies": {
     "iframe-bridge": "^3.0.2",
     "immer": "^11.1.4",
-    "rest-on-couch-client": "^6.0.0"
+    "rest-on-couch-client": "^8.0.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0"

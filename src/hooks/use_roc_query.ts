@@ -1,9 +1,9 @@
 import { useEffect, useReducer } from 'react';
-import type { IQueryResult } from 'rest-on-couch-client';
+import type { RocQueryResult as RocClientQueryResult } from 'rest-on-couch-client';
 
 import { useRoc } from '../contexts/roc.js';
 
-export type RocQueryResult<T> = IQueryResult<[string, string], T>;
+export type RocQueryResult<T> = RocClientQueryResult<[string, string], T>;
 
 interface RocQueryState<T = unknown> {
   loading: boolean;
