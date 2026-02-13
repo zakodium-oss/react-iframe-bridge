@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.1.2...v2.2.0) (2026-02-13)
+
+
+### Features
+
+* **types:** make SampleEntryContent safer ([ae781ce](https://github.com/zakodium-oss/react-iframe-bridge/commit/ae781cecfeb0901bf6bed644917c4bd3aeaf51e7))
+* update rest-on-couch-client to v8.0.0 ([63e050b](https://github.com/zakodium-oss/react-iframe-bridge/commit/63e050bd56d4f24a9a4553fe604533f3255eda0e))
+
 ## [2.1.2](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.1.1...v2.1.2) (2025-08-14)
 
 
