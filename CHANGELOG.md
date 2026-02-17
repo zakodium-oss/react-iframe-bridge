@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.1](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.2.0...v2.2.1) (2026-02-17)
+
+
+### Bug Fixes
+
+* add missing jcampFID as possible nmr spectrum attachment field ([#47](https://github.com/zakodium-oss/react-iframe-bridge/issues/47)) ([265d0d0](https://github.com/zakodium-oss/react-iframe-bridge/commit/265d0d09116242c9d7a070aa14b2b7bd8a3e6b54))
+* add missing reference as possible nmr spectrum field ([#49](https://github.com/zakodium-oss/react-iframe-bridge/issues/49)) ([f47248c](https://github.com/zakodium-oss/react-iframe-bridge/commit/f47248c77ff73c492fb33950082b18c1ab234619))
+
 ## [2.2.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.1.2...v2.2.0) (2026-02-13)
 
 
