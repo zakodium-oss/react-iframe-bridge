@@ -62,6 +62,10 @@ export interface SampleEntryContent {
 }
 
 export interface SampleEntrySpectraNmr {
+  /**
+   * Field which, if exists, uniquely identifies the spectrum in the list.
+   */
+  reference?: string;
   dimension?: number;
   nucleus?: string[];
   isFid?: boolean;
