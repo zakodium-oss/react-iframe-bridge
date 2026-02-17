@@ -78,6 +78,9 @@ export interface SampleEntrySpectraNmr {
   jcamp?: {
     filename: string;
   };
+  jcampFID?: {
+    filename: string;
+  };
   file?: {
     filename: string;
   };
