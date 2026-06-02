@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.2.1...v2.3.0) (2026-06-02)
+
+
+### Features
+
+* add cheminfo types for sample stock and stock history ([#50](https://github.com/zakodium-oss/react-iframe-bridge/issues/50)) ([7440756](https://github.com/zakodium-oss/react-iframe-bridge/commit/74407568ecc75e860f20822537faad8b6887bf90))
+
 ## [2.2.1](https://github.com/zakodium-oss/react-iframe-bridge/compare/v2.2.0...v2.2.1) (2026-02-17)
 
 
