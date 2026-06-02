@@ -23,23 +23,23 @@
   },
   "dependencies": {
     "iframe-bridge": "^3.0.2",
-    "immer": "^11.1.4",
-    "rest-on-couch-client": "^8.0.0"
+    "immer": "^11.1.8",
+    "rest-on-couch-client": "^8.0.1"
   },
   "peerDependencies": {
     "react": ">=18.0.0"
   },
   "devDependencies": {
-    "@types/node": "^25.2.3",
-    "@types/react": "^19.2.14",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
-    "@zakodium/tsconfig": "^1.0.2",
+    "@zakodium/tsconfig": "^1.0.5",
     "eslint": "^9.33.0",
-    "eslint-config-zakodium": "^19.1.0",
-    "prettier": "^3.8.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "typescript": "^5.9.3"
+    "eslint-config-zakodium": "^20.0.0",
+    "prettier": "^3.8.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "typescript": "^6.0.3"
   },
   "repository": {
     "type": "git",

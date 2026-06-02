@@ -2,6 +2,7 @@
   "extends": "@zakodium/tsconfig/jsx",
   "compilerOptions": {
     "types": ["node"],
+    "rootDir": "src",
     "outDir": "lib"
   },
   "include": ["src"]
