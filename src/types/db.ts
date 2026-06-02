@@ -39,6 +39,13 @@ export interface SampleEntry {
   $content: SampleEntryContent;
 }
 
+export interface SampleEntryStockHistory {
+  location?: string;
+  status?: number;
+  date?: number;
+  user?: string;
+}
+
 export interface SampleEntryContent {
   general?: {
     title?: string;
@@ -53,6 +60,15 @@ export interface SampleEntryContent {
       index: number[];
     };
   };
+  stock?: {
+    supplier?: string;
+    catalogNumber?: string;
+    purity?: string;
+    quantity?: string;
+    tare?: string;
+    history?: SampleEntryStockHistory[];
+  };
+
   identifier?: {
     cas?: Array<{ value: string }>;
   };
